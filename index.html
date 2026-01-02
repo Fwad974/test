@@ -738,14 +738,16 @@
         #objectives .section-title { color: var(--white); }
         #objectives .section-desc { color: var(--slate-400); }
 
-        .objectives-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            position: relative;
-            z-index: 1;
-        }
+	.objectives-grid {
+	    display: grid;
+	    grid-template-columns: repeat(5, 1fr);
+	    gap: 24px;
+	    position: relative;
+	    z-index: 1;
+	}
 
+	@media (max-width: 1400px) { .objectives-grid { grid-template-columns: repeat(3, 1fr); } }
+	@media (max-width: 1400px) { .objectives-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 1100px) { .objectives-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 600px) { .objectives-grid { grid-template-columns: 1fr; } }
 
@@ -1342,12 +1344,12 @@
             flex-shrink: 0;
         }
         .email-icon {
-	    font-size: 22px;
+	    font-size: 50px;
 	    color: #f5a623; /* adjust to your theme */
 	    text-decoration: none;
 	}
 	.email-icon:hover {
-	    opacity: 0.8;
+	    opacity: 0.9;
 	}
         .contact-label {
             font-size: 12px;
@@ -1542,7 +1544,7 @@
                         <span class="en">📝 Submit Paper</span>
                     </a>
                     <a href="#about" class="btn btn-glass">
-                        <span class="ku">زانیاری زیاتر</span>
+                        <span class="ku">زانیاریی زیاتر</span>
                         <span class="en">Learn More</span>
                     </a>
                 </div>
@@ -1551,7 +1553,7 @@
 		    <div class="hero-visual">
 		    	<div class="about-visual reveal">
 		            <div class="about-img-wrap">
-		                <img src="images/huzni.png" alt="Conference Poster">
+		                <img src="images/huzni_1.png" alt="Conference Poster">
 		       <div class="about-img-overlay"></div>
                     </div>
                 </div>
@@ -1585,13 +1587,13 @@
                     <p class="about-text en">Zari Kirmanji Magazine (1926–1932) stands as one of the most prominent and influential Kurdish journalism publications of the twentieth century. Husayn Huzni Mukriyani, through his rich scholarly contributions spanning journalism, history, literature, and the arts, provided invaluable service to Kurdish language, culture, and historical documentation.</p>
 
                     <div class="about-quote">
-                        <p class="ku">ڕۆژنامەیەکی فەرهەمەند و نوێخواز بووە، ڕۆڵی بەرچاوی لە پەرەپێدانی هۆشیارییی نەتەوەیی و بناغەدانانی ژێرخانی فەرهەنگی هەبووە.</p>
+                        <p class="ku">ڕۆژنامەیەكی فرەڕەهەند و نوێخواز بووە، ڕۆڵی بەرچاوی لە پەرەپێدانی هۆشیارییی نەتەوەیی و بناغەدانانی ژێرخانی فەرهەنگی هەبووە.</p>
                         <p class="en">An influential and innovative publication that played a significant role in developing national consciousness and building the foundations of cultural identity.</p>
                         <cite>— <span class="ku">لێکۆڵەران</span><span class="en">Researchers</span></cite>
                     </div>
 
-                    <p class="about-text ku">لەم کۆنفرانسە هەوڵدەدرێت قووڵتر لە پێگە و کاریگەرییەکانی گۆڤارەکە بکوڵێنرێتەوە، و میراتی حوزنی موکریانی پاسەوان بکرێت بۆ نەوەکانی داهاتوو.</p>
-                    <p class="about-text en">This conference aims to explore more deeply the position and lasting impacts of the magazine, while preserving Huzni Mukriyani's legacy for future generations of scholars and researchers.</p>
+                    <p class="about-text ku">لەم کۆنفرانسە  قووڵتر لە پێگە و کاریگەرییەکانی گۆڤارەکە دەكۆڵدرێتەوە، میراتی حوزنیی موکریانی بۆ نەوەکانی داهاتوو دەپارێزرێت و پەرەی پێدەدرێت.</p>
+			<p class="about-text en">This conference seeks to explore more deeply the status and influence of the magazine, safeguard Mukriyani's heritage for future generations, and promote its continued development.</p>
                 </div>
 
                 <div class="about-visual reveal">
@@ -1618,29 +1620,34 @@
                 <div class="section-icon">🎯</div>
                 <span class="section-label"><span class="ku">مەبەستەکان</span><span class="en">Goals</span></span>
                 <h2 class="section-title"><span class="ku">ئامانجەکانی کۆنفرانس</span><span class="en">Conference Objectives</span></h2>
-                <p class="section-desc"><span class="ku">ئامانجە سەرەکییەکانی کۆنگرەی زانستی</span><span class="en">The main objectives driving our scientific conference</span></p>
+                <p class="section-desc"><span class="ku">ئامانجە سەرەکییەکان</span><span class="en">The main objectives</span></p>
             </div>
 
             <div class="objectives-grid stagger">
                 <div class="obj-card">
                     <div class="obj-num">01</div>
-                    <h3><span class="ku">خستنەوەبەڕاستی گۆڤار</span><span class="en">Scholarly Examination</span></h3>
-                    <p><span class="ku">ناورنکی زانستی لە مێژوو، ڕۆڵ، دەستکەوت و کاریگەرییە هەمەلایەنەکانی گۆڤاری زاری کرمانجی</span><span class="en">Scientific focus on history, role, achievements, and comprehensive impacts of the magazine</span></p>
+                    <h3><span class="ku">خستنەوەبەرباسی گۆڤار</span><span class="en">Scholarly Examination</span></h3>
+                    <p><span class="ku">ئاوڕێکی زانستی لە مێژوو، ڕۆڵ، دەستکەوت و کاریگەرییە هەمەلایەنەکانی گۆڤاری زاری کرمانجی</span><span class="en">Scholarly analysis of the history, role, accomplishments, and multifaceted influences of Zari Kirmanji Magazine</span></p>
                 </div>
                 <div class="obj-card">
                     <div class="obj-num">02</div>
                     <h3><span class="ku">پێداچوونەوەی مێژوویی</span><span class="en">Historical Review</span></h3>
-                    <p><span class="ku">شەنۆکەکردنی ڕۆڵی گۆڤاری زاری کرمانجی وەک یەکەم گۆڤاری کوردی لە ناوچەی ڕواندز</span><span class="en">Analyzing the role as the first Kurdish magazine in the Rawanduz region</span></p>
+                    <p><span class="ku">شەنوكەوی ڕۆڵی گۆڤاری زاری كرمانجی وەك یەكەم گۆڤاری كوردی لە ناوچەی ڕواندز، كاریگەرییەكانی لەسەر نوسینەوەی مێژووی كورد</span><span class="en">Examining the role of Zari Kirmanji Magazine as the first Kurdish magazine in the Rawanduz region and its influence on Kurdish historiography</span></p>
                 </div>
                 <div class="obj-card">
                     <div class="obj-num">03</div>
                     <h3><span class="ku">دەوڵەمەندکردنی توێژینەوە</span><span class="en">Research Enrichment</span></h3>
-                    <p><span class="ku">ئەنجامدانی توێژینەوەی نوێ و قووڵ لەسەر گۆڤاری زاری کرمانجی و بابەتە بڵاوکراوەکانی</span><span class="en">Conducting new and in-depth research on the magazine and its published content</span></p>
+                    <p><span class="ku">توێژینەوەی نوێ لەسەر گۆڤاری زاری کرمانجی و بابەتە بڵاوکراوەکانی (مێژوو، زمان، ئەدەب، ڕۆژنامەگەری، چاپخانە، فۆتۆگرافی، دیزاین، مۆرهەڵكەندن و خۆشنوسی)</span><span class="en">Research on Zari Kirmanji Magazine and its published topics (history, language, literature, journalism, printing press, photography, design, engraving, and calligraphy)</span></p>
                 </div>
                 <div class="obj-card">
                     <div class="obj-num">04</div>
                     <h3><span class="ku">پەرەپێدانی زمان</span><span class="en">Language Development</span></h3>
                     <p><span class="ku">هەڵوەستەکردن لەسەر ڕۆڵی گۆڤاری زاری کرمانجی لە پەرەپێدانی زمانی کوردی</span><span class="en">Examining the magazine's role in Kurdish language development</span></p>
+                </div>
+                <div class="obj-card">
+                    <div class="obj-num">05</div>
+                    <h3><span class="ku">ڕۆڵێ پێشەنگایەتیی حوزنی</span><span class="en">Hozni's pioneering role</span></h3>
+                    <p><span class="ku">بەرزڕگراتنی ڕۆڵی پێشەنگایەتیی حوزنیی لە دامەزراندنی چاپخانە و نوسینەوەی مێژوو</span><span class="en">Highlighting Hozni's pioneering role in establishing the printing press and writing history</span></p>
                 </div>
             </div>
         </div>
@@ -1658,59 +1665,73 @@
 
             <div class="topics-wrapper stagger">
                 <div class="topic-card">
-                    <div class="topic-num">I</div>
+                    <div class="topic-num">١</div>
                     <div class="topic-content">
                         <h4><span class="ku">هێنانی چاپخانە</span><span class="en">Printing Press</span></h4>
                         <p><span class="ku">ڕۆڵی حوسێن حوزنی موکریانی لە هێنانی چاپخانە بۆ ڕواندز</span><span class="en">Mukriyani's role in establishing printing press in Rawanduz</span></p>
                     </div>
                 </div>
                 <div class="topic-card">
-                    <div class="topic-num">II</div>
+                    <div class="topic-num">٢</div>
                     <div class="topic-content">
                         <h4><span class="ku">ڕۆژنامەگەری</span><span class="en">Journalism</span></h4>
-                        <p><span class="ku">کاریگەرییی گۆڤار لە پێشخستنی ڕۆژنامەگەریی کوردی</span><span class="en">Magazine's impact on advancing Kurdish journalism</span></p>
+                        <p><span class="ku">کاریگەریی گۆڤار لە پێشخستنی ڕۆژنامەگەریی کوردی</span><span class="en">Magazine's impact on advancing Kurdish journalism</span></p>
                     </div>
                 </div>
                 <div class="topic-card">
-                    <div class="topic-num">III</div>
+                    <div class="topic-num">٣</div>
                     <div class="topic-content">
                         <h4><span class="ku">مێژوونووسی</span><span class="en">Historiography</span></h4>
                         <p><span class="ku">گۆڤارەکە وەک سەرچاوەیەک بۆ نووسینەوەی مێژووی کورد</span><span class="en">The magazine as a source for documenting Kurdish history</span></p>
                     </div>
                 </div>
                 <div class="topic-card">
-                    <div class="topic-num">IV</div>
+                    <div class="topic-num">٤</div>
                     <div class="topic-content">
                         <h4><span class="ku">ناسنامەی نەتەوەیی</span><span class="en">National Identity</span></h4>
-                        <p><span class="ku">ناسنامەی کوردبوون و ڕابەڵەی هۆشیاری</span><span class="en">Kurdish identity and national awareness</span></p>
+                        <p><span class="ku">ناسنامەی کوردبوون و ڕایەڵەی هۆشیاری</span><span class="en">Kurdish identity and national awareness</span></p>
                     </div>
                 </div>
                 <div class="topic-card">
-                    <div class="topic-num">V</div>
+                    <div class="topic-num">٥</div>
                     <div class="topic-content">
                         <h4><span class="ku">زاراوەسازی</span><span class="en">Terminology</span></h4>
                         <p><span class="ku">بایەخی گۆڤار لە گەشەپێدانی زمان و زاراوەسازی</span><span class="en">Significance in language development and terminology</span></p>
                     </div>
                 </div>
                 <div class="topic-card">
-                    <div class="topic-num">VI</div>
+                    <div class="topic-num">٦</div>
                     <div class="topic-content">
                         <h4><span class="ku">ئەدەبیات</span><span class="en">Literature</span></h4>
                         <p><span class="ku">ڕەنگدانەوەی ئەدەبی کوردی لە گۆڤارەکەدا</span><span class="en">Kurdish literature within the magazine pages</span></p>
                     </div>
                 </div>
                 <div class="topic-card">
-                    <div class="topic-num">VII</div>
+                    <div class="topic-num">٧</div>
                     <div class="topic-content">
                         <h4><span class="ku">وەرگێڕان</span><span class="en">Translation</span></h4>
-                        <p><span class="ku">ڕۆڵی گۆڤار لە پەروەردەن بە وەرگێران</span><span class="en">Role in education through translation</span></p>
+                        <p><span class="ku">ڕۆڵی گۆڤار لە برەودان بە وەرگێران</span><span class="en">Role in education through translation</span></p>
                     </div>
                 </div>
                 <div class="topic-card">
-                    <div class="topic-num">VIII</div>
+                    <div class="topic-num">٨</div>
                     <div class="topic-content">
                         <h4><span class="ku">میراتی کەلتووری</span><span class="en">Cultural Heritage</span></h4>
-                        <p><span class="ku">شوێن‌پەنجەی حوزنی موکریانی و میراتی فەرهەنگی</span><span class="en">Mukriyani's legacy and cultural heritage development</span></p>
+                        <p><span class="ku">شوێنپەنجە حوزنی موکریانی و میراتی فەرهەنگی</span><span class="en">Mukriyani's legacy and cultural heritage development</span></p>
+                    </div>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-num">٩</div>
+                    <div class="topic-content">
+                        <h4><span class="ku">هونەر و هونەركاری</span><span class="en">Art and Artists</span></h4>
+                        <p><span class="ku">كرانەوەی كۆمەڵایەتی بەڕووی هونەر، پەرەپێدانی فۆتۆگرافی و هەڵكۆڵین</span><span class="en">Social openness towards art, development of photography and research</span></p>
+                    </div>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-num">١٠</div>
+                    <div class="topic-content">
+                        <h4><span class="ku">دونیابینی و بیری نوێخوازی</span><span class="en">Worldview and Modern Thought</span></h4>
+                        <p><span class="ku">بەرزكردنەوەی ئاستی هۆشیاری و خوێندەواری لە كوردستاندا</span><span class="en">Raising the level of awareness and literacy in Kurdistan</span></p>
                     </div>
                 </div>
             </div>
@@ -1729,17 +1750,17 @@
             <div class="timeline-container">
                 <div class="timeline-line"></div>
                 <div class="stagger">
-                    <div class="tl-item"><div class="tl-dot">1</div><div class="tl-content"><div class="tl-date"><span class="ku">٢٠٢٦/٧/٢٠</span><span class="en">July 20, 2026</span></div><p class="tl-text"><span class="ku">دوا ڕۆژ بۆ وەرگرتنی پوختەی توێژینەوەکان</span><span class="en">Abstract submission deadline</span></p></div></div>
-                    <div class="tl-item"><div class="tl-dot">2</div><div class="tl-content"><div class="tl-date"><span class="ku">٢٠٢٧/٢/١</span><span class="en">Feb 1, 2027</span></div><p class="tl-text"><span class="ku">وەڵامدانەوە بۆ پوختەی پەسەندکراو</span><span class="en">Abstract acceptance notification</span></p></div></div>
+                    <div class="tl-item"><div class="tl-dot">1</div><div class="tl-content"><div class="tl-date"><span class="ku">٢٠٢٦/١/٢٠</span><span class="en">July 20, 2026</span></div><p class="tl-text"><span class="ku">دوا ڕۆژ بۆ وەرگرتنی پوختەی توێژینەوەکان</span><span class="en">Abstract submission deadline</span></p></div></div>
+                    <div class="tl-item"><div class="tl-dot">2</div><div class="tl-content"><div class="tl-date"><span class="ku">٢٠٢٧/٢/١</span><span class="en">Feb 1, 2027</span></div><p class="tl-text"><span class="ku">وەڵامدانەوەی پوختەكان</span><span class="en">Abstract acceptance notification</span></p></div></div>
                     <div class="tl-item"><div class="tl-dot">3</div><div class="tl-content"><div class="tl-date"><span class="ku">٢٠٢٧/٤/١٥</span><span class="en">Apr 15, 2027</span></div><p class="tl-text"><span class="ku">دوا ڕۆژ بۆ وەرگرتنی تەواوی توێژینەوەکان</span><span class="en">Full paper submission deadline</span></p></div></div>
-                    <div class="tl-item"><div class="tl-dot">4</div><div class="tl-content"><div class="tl-date"><span class="ku">٢٠٢٧/٥/١</span><span class="en">May 1, 2027</span></div><p class="tl-text"><span class="ku">وەڵامدانەوەی توێژەران بۆ پەسەندکردن</span><span class="en">Final acceptance notification</span></p></div></div>
+                    <div class="tl-item"><div class="tl-dot">4</div><div class="tl-content"><div class="tl-date"><span class="ku">٢٠٢٧/٥/١</span><span class="en">May 1, 2027</span></div><p class="tl-text"><span class="ku">وەڵامدانەوەی توێژینەوەكان</span><span class="en">Final acceptance notification</span></p></div></div>
                     <div class="tl-item highlight"><div class="tl-dot">🎉</div><div class="tl-content"><div class="tl-date"><span class="ku">٢٥-٢٦ی ئایار ٢٠٢٦</span><span class="en">May 25-26, 2026</span></div><p class="tl-text"><span class="ku">بەڕێوەبردنی کۆنفرانس</span><span class="en">Conference dates</span></p></div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- COMMITTEE -->
+<!-- COMMITTEE -->
     <section id="committee">
         <div class="container">
             <div class="section-header reveal">
@@ -1748,25 +1769,206 @@
                 <h2 class="section-title"><span class="ku">لیژنەی کۆنفرانس</span><span class="en">Conference Committee</span></h2>
             </div>
 
+            <!-- Scientific Committee -->
             <div class="committee-section">
-                <div class="committee-divider"><span><span class="ku">لیژنەی زانستیی</span><span class="en">Scientific Committee</span></span></div>
+                <div class="committee-divider"><span><span class="ku">لیژنەی زانستیی کۆنفرانس</span><span class="en">Scientific Committee</span></span></div>
                 <div class="committee-cards stagger">
-                    <div class="member-card"><div class="member-avatar">👨‍🏫</div><div class="member-role"><span class="ku">سەرۆک</span><span class="en">Chair</span></div><div class="member-name"><span class="ku">پ.ی.د. سیروان زەند</span><span class="en">Prof. Dr. Sirwan Zand</span></div><div class="member-affiliation"><span class="ku">زانکۆی سۆران</span><span class="en">Soran University</span></div></div>
-                    <div class="member-card"><div class="member-avatar">👨‍🎓</div><div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div><div class="member-name"><span class="ku">پ.ی.د. کوردستان موکریانی</span><span class="en">Prof. Dr. Kurdistan Mukriyani</span></div><div class="member-affiliation"><span class="ku">خانەنشین</span><span class="en">Retired</span></div></div>
-                    <div class="member-card"><div class="member-avatar">👨‍🏫</div><div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div><div class="member-name"><span class="ku">پ.ی.د. هەڵمەت بایز</span><span class="en">Prof. Dr. Halmat Bayiz</span></div><div class="member-affiliation"><span class="ku">زانکۆی سۆران</span><span class="en">Soran University</span></div></div>
-                    <div class="member-card"><div class="member-avatar">👨‍🎓</div><div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div><div class="member-name"><span class="ku">پ.ی.د. محمد خدر</span><span class="en">Prof. Dr. Muhammad Khadr</span></div><div class="member-affiliation"><span class="ku">زانکۆی سۆران</span><span class="en">Soran University</span></div></div>
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🏫</div>
+                        <div class="member-role"><span class="ku">سەرۆک</span><span class="en">Chair</span></div>
+                        <div class="member-name"><span class="ku">پ.د. سیروان زەند</span><span class="en">Prof. Dr. Sirwan Zand</span></div>
+                        <div class="member-affiliation"><span class="ku">سەرۆکی لیژنەی زانستی - زانکۆی سۆران</span><span class="en">Scientific Committee Chair - Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🎓</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">پ.د. کوردستان موکریانی</span><span class="en">Prof. Dr. Kurdistan Mukriyani</span></div>
+                        <div class="member-affiliation"><span class="ku">خانەنشین</span><span class="en">Retired Scholar</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🏫</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">پ.د. هەڵمەت بایز ڕەسوڵ</span><span class="en">Prof. Dr. Halmat Bayiz Rasul</span></div>
+                        <div class="member-affiliation"><span class="ku">زانکۆی سۆران</span><span class="en">Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🎓</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">پ.ی.د. محمد خدر مولود</span><span class="en">Dr. Muhammad Khadr Moloud</span></div>
+                        <div class="member-affiliation"><span class="ku">زانکۆی سەڵاحەدین</span><span class="en">Salahadin University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🏫</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">پ.ی.د. نامێخ غازی</span><span class="en">Dr. Namekh Ghazi</span></div>
+                        <div class="member-affiliation"><span class="ku">زانکۆی سەڵاحەدین</span><span class="en">Salahadin University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🎓</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">پ.ی.د. شاهەنوان عەبدوڵڵا صابر</span><span class="en">Dr. Shahnowan Abdullah Saber</span></div>
+                        <div class="member-affiliation"><span class="ku">زانکۆی سۆران</span><span class="en">Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🏫</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">پ.ی.د. ئیبراهیم عومەر صادق مەولاناد</span><span class="en">Dr. Ibrahim Omer Sadeq Mawlanad</span></div>
+                        <div class="member-affiliation"><span class="ku">زانکۆی سۆران</span><span class="en">Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🎓</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">پ.ی.د. محمد احمد ابراهیم</span><span class="en">Dr. Muhammad Ahmad Ibrahim</span></div>
+                        <div class="member-affiliation"><span class="ku">زانکۆی سۆران</span><span class="en">Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🏫</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">پ.ی.د. دڵێر صادق کاتبی</span><span class="en">Dr. Diler Sadeq Katbi</span></div>
+                        <div class="member-affiliation"><span class="ku">زانکۆی سۆران</span><span class="en">Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🎓</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">د. سەرباز مجید خۆشناو</span><span class="en">Dr. Sarbaz Majid Khoshnaw</span></div>
+                        <div class="member-affiliation"><span class="ku">خانەنشین</span><span class="en">Retired</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🏫</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">د. علی حمد عثمان</span><span class="en">Dr. Ali Hamad Othman</span></div>
+                        <div class="member-affiliation"><span class="ku">زانکۆی سۆران</span><span class="en">Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🎓</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">د. ستار شێخ حسن</span><span class="en">Mr. Satar Shaikh Hasan</span></div>
+                        <div class="member-affiliation"><span class="ku">ڕێکخەری لۆیەنە - زانکۆی سۆران</span><span class="en">Branch Coordinator - Soran University</span></div>
+                    </div>
                 </div>
             </div>
 
+            <!-- Organizing Committee -->
+<!-- Organizing Committee -->
             <div class="committee-section">
-                <div class="committee-divider"><span><span class="ku">لیژنەی ئامادەکاری</span><span class="en">Organizing Committee</span></span></div>
+                <div class="committee-divider"><span><span class="ku">لیژنەی ئامادەکاری کۆنفرانس</span><span class="en">Organizing Committee</span></span></div>
                 <div class="committee-cards stagger">
-                    <div class="member-card"><div class="member-avatar">👨‍💼</div><div class="member-role"><span class="ku">سەرۆک</span><span class="en">Chair</span></div><div class="member-name"><span class="ku">د. کارمەند عەبدوڵڵا</span><span class="en">Dr. Karmand Abdullah</span></div><div class="member-affiliation"><span class="ku">ڕاگری فاکەڵتی</span><span class="en">Dean of Faculty</span></div></div>
-                    <div class="member-card"><div class="member-avatar">👨‍💻</div><div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div><div class="member-name"><span class="ku">دادیار ئازاد</span><span class="en">Dadyar Azad</span></div><div class="member-affiliation"><span class="ku">وەزارەتی پەروەردە</span><span class="en">Ministry of Education</span></div></div>
-                    <div class="member-card"><div class="member-avatar">👨‍🔬</div><div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div><div class="member-name"><span class="ku">ئیسماعیل ئیبراهیم</span><span class="en">Ismail Ibrahim</span></div><div class="member-affiliation"><span class="ku">دەزگای زاری کرمانجی</span><span class="en">Zari Kirmanji Institute</span></div></div>
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍💼</div>
+                        <div class="member-role"><span class="ku">سەرۆک</span><span class="en">Chair</span></div>
+                        <div class="member-name"><span class="ku">١- د.کارمەند عەبــدوڵڵا حەمەد – ســـەرۆكی لیژنـــە – زانكـــۆی سۆران</span><span class="en">1- Dr. Karmand Abdullah Hamad - Committee Chair - Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🏫</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">٢- پ. ی. د. نیعمەت علی محمود – زانكۆی سۆران</span><span class="en">2- Prof. Dr. Ni'mat Ali Mahmoud - Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍💻</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">٣- پ. ی. د. بژار عثمان احمد – زانكۆی سۆران</span><span class="en">3- Prof. Dr. Bjar Othman Ahmad - Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🔬</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">٤- د. ریباز دڵاوەر عمر – زانكۆی سۆران</span><span class="en">4- Dr. Ribaz Dalawar Omar - Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🏫</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">٥- د. پەیوەند محمد حمد – زانكۆی سۆران</span><span class="en">5- Dr. Paywand Muhammad Hamad - Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍💼</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">٦- د. كازم شێخ حسین – زانكۆی سۆران</span><span class="en">6- Dr. Kazim Sheikh Hussein - Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🎓</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">٧- ئیسماعیل ئیبراهیم – دەرگای زاری کرمانجی</span><span class="en">7- Ismail Ibrahim - Zari Kurmanju Language Institute</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍💻</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">٨- دادیار ئازاد مەعروف – وەزارەتی پەروەردە</span><span class="en">8- Dadyar Azad Maaruf - Ministry of Education</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🏫</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">٩- پارێز یووســف ســـۆۆنی – بەرێوەبەری گەشــتوگوزاری رواندز –  نوێنەری قایمقامیەتی رواندز</span><span class="en">9- Parez Yousuf Sofi - Director of Rawanduz Tourism - Representative of Rawanduz District</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🎓</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">١٠- چیا محمد حسن – بەرێوەبەری شارەوانی رواندز</span><span class="en">10- Chia Muhammad Hassan -  Director of Rawanduz Municipality</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍💼</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">١١- د. هێمن محمد حمدامــین – بەرێوەبەری دلنیایی جۆریی زانكۆی سۆران</span><span class="en">11- Dr. Hemin Muhammad Hamadamin - Director of Quality Assurance - Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🏫</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">١٢- م. رێبەر عبدالغفــار عزیــز – پەرتووكخــانەی ڕاگەیاندنــی زانكــۆی سۆران</span><span class="en">12- Dr. Rebar Abdulghafar Aziz - Soran University Media Library</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍💼</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">١٣- م. ی سەهەند عبدالستار مصطفی – زانكۆی سۆران</span><span class="en">13- Dr. Sahand Abdulsatar Mustafa - Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🏫</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">١٤- م. ی. دڵاوەر شكری پاپیر – زانكۆی سۆران</span><span class="en">14- Dr. Dalawar Shukri ‌Bapir - Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🎓</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">١٥- م. ی. چاوەرێ تیعمەت سالح – زانكۆی سۆران</span><span class="en">15- Dr. Chaware Tayemat Salih - Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍💼</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">١٦- رێــزا صــمد ملاعبد – ئەندازیـار و گرافیــك دیزایـــنەر – زانكۆی سۆران</span><span class="en">16- Reza Samad Mala-abd - Engineer & Graphic Designer - Soran University</span></div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-avatar">👨‍🏫</div>
+                        <div class="member-role"><span class="ku">ئەندام</span><span class="en">Member</span></div>
+                        <div class="member-name"><span class="ku">١٧- فاریس عمر حسین – زانكۆی سۆران</span><span class="en">17- Faris Omar Husayn - Soran University</span></div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
     </section>
 
     <!-- SUBMISSION -->
@@ -1837,6 +2039,7 @@
             </div>
         </div>
     </section>
+    
 
     <!-- CONTACT -->
     <section id="contact">
@@ -1852,7 +2055,7 @@
                     <div class="contact-item"><div class="contact-icon">✉️</div><div><div class="contact-label"><span class="ku">ئیمەیڵ</span><span class="en">Email</span></div><div class="contact-value"><a href="mailto:zari.kirmanji@soran.edu.iq">zari.kirmanji@soran.edu.iq</a></div></div></div>
                     <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label"><span class="ku">شوێن</span><span class="en">Location</span></div><div class="contact-value"><span class="ku">زانکۆی سۆران، هەرێمی کوردستان</span><span class="en">Soran University, Kurdistan Region</span></div></div></div>
                     <div class="contact-item"><div class="contact-icon">🌐</div><div><div class="contact-label"><span class="ku">ماڵپەڕ</span><span class="en">Website</span></div><div class="contact-value"><a href="https://main.soran.edu.iq" target="_blank">main.soran.edu.iq</a></div></div></div>
-                    <div class="contact-item"><div class="contact-icon">👤</div><div><div class="contact-label"><span class="ku">هاوکاری</span><span class="en">Coordinator</span></div><div class="contact-value"><span class="ku">کاک دادیار ئازاد</span><span class="en">Mr. Dadyar Azad</span></div></div></div>
+                    <div class="contact-item"><div class="contact-icon">👤</div><div><div class="contact-label"><span class="ku">هاوکاری</span><span class="en">Coordinator</span></div><div class="contact-value"><span class="ku">دادیار ئازاد</span><span class="en">Mr. Dadyar Azad</span></div></div></div>
                 </div>
                 <div class="contact-map reveal">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25798!2d44.53!3d36.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSoran%20University!5e0!3m2!1sen!2siq" allowfullscreen="" loading="lazy"></iframe>
