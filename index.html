@@ -1631,6 +1631,141 @@
 	.resource-btn i {
 	    font-size: 18px;
 	}
+        :root {
+            --white: #FFFFFF; --snow: #FAFBFC; --pearl: #F1F5F9; --silver: #E2E8F0;
+            --slate-400: #94A3B8; --slate-500: #64748B; --slate-600: #475569;
+            --charcoal: #334155; --midnight: #0F172A;
+            --amber-50: #FFFBEB; --amber-100: #FEF3C7; --amber-200: #FDE68A;
+            --amber-400: #FBBF24; --amber-500: #F59E0B; --amber-600: #D97706; --amber-700: #B45309;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Vazirmatn', system-ui, sans-serif; background: var(--snow); color: var(--charcoal); line-height: 1.8; font-size: 16px; }
+        body.english { font-family: 'Inter', system-ui, sans-serif; direction: ltr; }
+        .en { display: none; } .ku { display: block; }
+        span.ku, a.ku { display: inline; } span.en, a.en { display: none; }
+        body.english .en { display: block; } body.english .ku { display: none; }
+        body.english span.en, body.english a.en { display: inline; }
+        body.english span.ku, body.english a.ku { display: none; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-icon { width: 70px; height: 70px; background: linear-gradient(135deg, var(--amber-100), var(--amber-200)); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 24px; box-shadow: 0 10px 40px rgba(245,158,11,0.2); }
+        .section-label { display: inline-block; background: var(--amber-50); color: var(--amber-700); padding: 8px 18px; border-radius: 100px; font-size: 12px; font-weight: 700; margin-bottom: 18px; }
+        .section-title { font-family: 'Vazirmatn', sans-serif; font-size: clamp(30px, 5vw, 48px); font-weight: 800; color: var(--midnight); margin-bottom: 18px; line-height: 1.3; }
+        body.english .section-title { font-family: 'Fraunces', serif; font-weight: 600; }
+        .section-desc { font-size: 17px; color: var(--slate-500); max-width: 600px; margin: 0 auto; line-height: 1.8; }
+        .lang-toggle { position: fixed; top: 24px; left: 24px; z-index: 1000; display: flex; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); padding: 5px; border-radius: 100px; box-shadow: 0 4px 30px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.8); }
+        .lang-btn { padding: 10px 22px; border: none; background: transparent; cursor: pointer; font-family: 'Vazirmatn', sans-serif; font-size: 13px; font-weight: 600; border-radius: 100px; transition: all 0.3s; color: var(--slate-500); }
+        .lang-btn.active { background: var(--midnight); color: var(--white); box-shadow: 0 4px 15px rgba(15,23,42,0.3); }
+
+        /* ===================== COMPACT DOWNLOADS ===================== */
+        #resources {
+            background: linear-gradient(135deg, var(--amber-50) 0%, var(--pearl) 100%);
+            padding: 80px 40px;
+        }
+
+        .dl-list {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 24px;
+            border: 2px solid var(--silver);
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+        }
+
+        .dl-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 28px;
+            gap: 16px;
+            transition: background 0.2s;
+            border-bottom: 1px solid var(--pearl);
+        }
+
+        .dl-row:last-child { border-bottom: none; }
+        .dl-row:hover { background: var(--amber-50); }
+
+        .dl-row-right {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .dl-num {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .dl-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--midnight);
+            line-height: 1.4;
+        }
+        body.english .dl-name { font-family: 'Inter', sans-serif; }
+
+        .dl-row-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .dl-type {
+            background: var(--pearl);
+            color: var(--amber-700);
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .dl-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 16px;
+            background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 9px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: all 0.25s;
+            box-shadow: 0 3px 10px rgba(245,158,11,0.2);
+            white-space: nowrap;
+        }
+
+        .dl-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(245,158,11,0.35);
+        }
+
+        .dl-btn i { font-size: 12px; }
+
+        @media (max-width: 600px) {
+            #resources { padding: 60px 16px; }
+            .dl-row { padding: 12px 16px; gap: 10px; }
+            .dl-num { width: 26px; height: 26px; font-size: 11px; }
+            .dl-name { font-size: 13px; }
+            .dl-type { display: none; }
+            .dl-btn { padding: 6px 12px; font-size: 12px; gap: 5px; }
+            .dl-btn span { display: none; }
+            .dl-list { border-radius: 16px; }
+        }
+
     </style>
 </head>
 <body>
@@ -2805,46 +2940,55 @@ function toggleAccordion(button) {
 <!-- RESOURCES / DOWNLOADS -->
 <section id="resources">
     <div class="container">
-        <div class="section-header reveal">
+    <div class="container">
+        <div class="section-header">
             <div class="section-icon">📥</div>
             <span class="section-label"><span class="ku">داگرتن</span><span class="en">Downloads</span></span>
             <h2 class="section-title"><span class="ku">سەرچاوەکان و بەڵگەنامەکان</span><span class="en">Resources & Documents</span></h2>
             <p class="section-desc"><span class="ku">سەرچاوە گرنگەکانی کۆنفرانس بۆ داگرتن</span><span class="en">Download important conference documents</span></p>
         </div>
 
-        <div class="resources-grid stagger">
-            <!-- Resource 1 -->
-            <div class="resource-card reveal">
-                <div class="resource-icon">📄</div>
-                <h3 class="resource-title">
-                    <span class="ku">سەرچاوەی یەکەم</span>
-                    <span class="en">Document 1</span>
-                </h3>
-                <a href="https://drive.google.com/file/d/1andPG26Q5X_nCw9iUpg_maBkikky_zbV/view?usp=sharing" 
-                   target="_blank" 
-                   class="resource-btn">
-                    <i class="fas fa-download"></i>
-                    <span class="ku">داگرتن</span>
-                    <span class="en">Download PDF</span>
-                </a>
+        <div class="dl-list">
+            <div class="dl-row">
+                <div class="dl-row-right"><div class="dl-num">١</div><div class="dl-name"><span class="ku">سەرچاوەی یەکەم</span><span class="en">Document 1</span></div></div>
+                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/uc?export=download&id=19XqY-FbIRg9Pw8ZnVJUTJV-u2PgUsJ-G" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
             </div>
-
-            <!-- Resource 2 -->
-            <div class="resource-card reveal">
-                <div class="resource-icon">📑</div>
-                <h3 class="resource-title">
-                    <span class="ku">سەرچاوەی دووەم</span>
-                    <span class="en">Document 2</span>
-                </h3>
-                <a href="https://drive.google.com/file/d/1sV-Gx7ctklFcs-7oWXI-yZuKTM5vA9zY/view?usp=sharing" 
-                   target="_blank" 
-                   class="resource-btn">
-                    <i class="fas fa-download"></i>
-                    <span class="ku">داگرتن</span>
-                    <span class="en">Download PDF</span>
-                </a>
+            <div class="dl-row">
+                <div class="dl-row-right"><div class="dl-num">٢</div><div class="dl-name"><span class="ku">سەرچاوەی دووەم</span><span class="en">Document 2</span></div></div>
+                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/uc?export=download&id=19ZO8RYROc9oQRH5Ty9UPmxziyc4r0GWC" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
             </div>
-           </div>
+            <div class="dl-row">
+                <div class="dl-row-right"><div class="dl-num">٣</div><div class="dl-name"><span class="ku">سەرچاوەی سێیەم</span><span class="en">Document 3</span></div></div>
+                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/uc?export=download&id=1A1fb-_X3H3FpuEqRgsQbvEMRhk8mizq4" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
+            </div>
+            <div class="dl-row">
+                <div class="dl-row-right"><div class="dl-num">٤</div><div class="dl-name"><span class="ku">سەرچاوەی چوارەم</span><span class="en">Document 4</span></div></div>
+                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/uc?export=download&id=19KfwXFo30s8QUDQq0kNkOVx8Nra6G8_i" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
+            </div>
+            <div class="dl-row">
+                <div class="dl-row-right"><div class="dl-num">٥</div><div class="dl-name"><span class="ku">سەرچاوەی پێنجەم</span><span class="en">Document 5</span></div></div>
+                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/file/d/19VQLQhhzObR9pVfoIGTJX-0fOuQC6VyJ/view?usp=sharing" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
+            </div>
+            <div class="dl-row">
+                <div class="dl-row-right"><div class="dl-num">٦</div><div class="dl-name"><span class="ku">سەرچاوەی شەشەم</span><span class="en">Document 6</span></div></div>
+                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/file/d/19F_Qc1m8x54rH4AX-CgPnB7DEgkY7NzJ/view?usp=sharing" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
+            </div>
+            <div class="dl-row">
+                <div class="dl-row-right"><div class="dl-num">٧</div><div class="dl-name"><span class="ku">سەرچاوەی حەوتەم</span><span class="en">Document 7</span></div></div>
+                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/file/d/16eAEO6AjVhr1WfNb-f5hRte_RanYrDzr/view?usp=sharing" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
+            </div>
+            <div class="dl-row">
+                <div class="dl-row-right"><div class="dl-num">٨</div><div class="dl-name"><span class="ku">سەرچاوەی هەشتەم</span><span class="en">Document 8</span></div></div>
+                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/file/d/19Vmal4ke_Z3N1ML4X_Z3E66BIMWOJQIq/view?usp=sharing" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
+            </div>
+            <div class="dl-row">
+                <div class="dl-row-right"><div class="dl-num">٩</div><div class="dl-name"><span class="ku">سەرچاوەی نۆیەم</span><span class="en">Document 9</span></div></div>
+                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/file/d/19_wv21aNGk6k8PhqJCayh3vNDc7imF2T/view?usp=sharing" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
+            </div>
+            <div class="dl-row">
+                <div class="dl-row-right"><div class="dl-num">١٠</div><div class="dl-name"><span class="ku">سەرچاوەی دەیەم</span><span class="en">Document 10</span></div></div>
+                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/file/d/19_wv21aNGk6k8PhqJCayh3vNDc7imF2T/view?usp=sharing" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
+            </div>
         </div>
     </div>
 </section>
