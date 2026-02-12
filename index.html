@@ -1790,7 +1790,116 @@ body.english .lang-btn { font-family: 'Inter', sans-serif; }
             .dl-btn span { display: none; }
             .dl-list { border-radius: 16px; }
         }
+.nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    flex-shrink: 0;
+    z-index: 200;
+}
+.nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2.5px;
+    background: var(--midnight);
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+.nav-hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.nav-hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.nav-hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
 
+@media (max-width: 900px) {
+    .main-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--silver);
+    }
+    .nav-inner {
+        padding: 10px 16px;
+        overflow: visible !important;
+        flex-wrap: wrap !important;
+        position: relative;
+        gap: 8px;
+    }
+    .nav-hamburger {
+        display: block;
+        order: -1;
+    }
+    body.english .nav-hamburger { order: 3; }
+    .nav-logo { order: 0; }
+    .lang-toggle-nav {
+        order: 1;
+        margin-right: 0;
+        margin-left: auto;
+        padding: 3px;
+    }
+    body.english .lang-toggle-nav {
+        margin-left: 0;
+        margin-right: auto;
+    }
+    .lang-toggle-nav .lang-btn {
+        padding: 6px 14px;
+        font-size: 11px;
+    }
+    .nav-logo img {
+        height: 34px !important;
+        margin-left: 8px !important;
+    }
+    /* Hide all nav links by default */
+    .nav-link {
+        display: none !important;
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 15px;
+        border-bottom: 1px solid var(--pearl);
+        border-radius: 0;
+    }
+    .nav-link:last-child { border-bottom: none; }
+    .nav-link:hover {
+        background: var(--amber-50);
+        color: var(--amber-700);
+    }
+    /* Show links when menu is toggled open */
+    .main-nav.nav-open .nav-link {
+        display: flex !important;
+        align-items: center;
+        animation: navSlideIn 0.3s ease forwards;
+        opacity: 0;
+    }
+    .main-nav.nav-open .nav-link:nth-child(4) { animation-delay: 0.02s; }
+    .main-nav.nav-open .nav-link:nth-child(5) { animation-delay: 0.04s; }
+    .main-nav.nav-open .nav-link:nth-child(6) { animation-delay: 0.06s; }
+    .main-nav.nav-open .nav-link:nth-child(7) { animation-delay: 0.08s; }
+    .main-nav.nav-open .nav-link:nth-child(8) { animation-delay: 0.10s; }
+    .main-nav.nav-open .nav-link:nth-child(9) { animation-delay: 0.12s; }
+    .main-nav.nav-open .nav-link:nth-child(10) { animation-delay: 0.14s; }
+    .main-nav.nav-open .nav-link:nth-child(11) { animation-delay: 0.16s; }
+    .main-nav.nav-open .nav-link:nth-child(12) { animation-delay: 0.18s; }
+    .main-nav.nav-open .nav-link:nth-child(13) { animation-delay: 0.20s; }
+    .main-nav.nav-open .nav-link:nth-child(14) { animation-delay: 0.22s; }
+    
+    @keyframes navSlideIn {
+        from { opacity: 0; transform: translateY(-8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+}
+
+@media (min-width: 901px) {
+    .nav-hamburger { display: none !important; }
+}
     </style>
 </head>
 <body>
@@ -1839,29 +1948,36 @@ body.english .lang-btn { font-family: 'Inter', sans-serif; }
     </section>
 
     <!-- NAV -->
-    <nav class="main-nav">
-        <div class="nav-inner">
+<nav class="main-nav">
+    <div class="nav-inner">
+        <!-- Hamburger button (new!) -->
+        <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+
         <a href="#" class="nav-logo">
             <img src="images/logo00.jpg" alt="Soran University" style="height: 45px; width: auto; margin-left: 20px;">
         </a>
-        <!-- ADD THIS at the end, inside nav-inner -->
+        
         <div class="lang-toggle-nav">
             <button class="lang-btn active" onclick="setLang('ku')">کوردی</button>
             <button class="lang-btn" onclick="setLang('en')">English</button>
         </div>
-            <a href="#about" class="nav-link"><span class="ku">دەربارە</span><span class="en">About</span></a>
-            <a href="#objectives" class="nav-link"><span class="ku">ئامانجەکان</span><span class="en">Objectives</span></a>
-            <a href="#topics" class="nav-link"><span class="ku">بابەتەکان</span><span class="en">Topics</span></a>
-            <a href="#timeline" class="nav-link"><span class="ku">کاتبەندی</span><span class="en">Timeline</span></a>
-            <a href="#abstract-guidelines" class="nav-link"><span class="ku">ڕێنمایی پوختە</span><span class="en">Abstract Guide</span></a>
-            <a href="#committee" class="nav-link"><span class="ku">لیژنە</span><span class="en">Committee</span></a>
-            <a href="#submission" class="nav-link"><span class="ku">توێژینەوە</span><span class="en">Submission</span></a>
-            <a href="#requirements" class="nav-link"><span class="ku">مەرجەکان</span><span class="en">Requirements</span></a>
-            <a href="#resources" class="nav-link"><span class="ku">سەرچاوەکان</span><span class="en">Resources</span></a>
-            <a href="#gallery" class="nav-link"><span class="ku">گالەری</span><span class="en">Gallery</span></a>
-            <a href="#contact" class="nav-link"><span class="ku">پەیوەندی</span><span class="en">Contact</span></a>
-        </div>
-    </nav>
+
+        <a href="#about" class="nav-link"><span class="ku">دەربارە</span><span class="en">About</span></a>
+        <a href="#objectives" class="nav-link"><span class="ku">ئامانجەکان</span><span class="en">Objectives</span></a>
+        <a href="#topics" class="nav-link"><span class="ku">بابەتەکان</span><span class="en">Topics</span></a>
+        <a href="#timeline" class="nav-link"><span class="ku">کاتبەندی</span><span class="en">Timeline</span></a>
+        <a href="#abstract-guidelines" class="nav-link"><span class="ku">ڕێنمایی پوختە</span><span class="en">Abstract Guide</span></a>
+        <a href="#committee" class="nav-link"><span class="ku">لیژنە</span><span class="en">Committee</span></a>
+        <a href="#submission" class="nav-link"><span class="ku">توێژینەوە</span><span class="en">Submission</span></a>
+        <a href="#requirements" class="nav-link"><span class="ku">مەرجەکان</span><span class="en">Requirements</span></a>
+        <a href="#resources" class="nav-link"><span class="ku">سەرچاوەکان</span><span class="en">Resources</span></a>
+        <a href="#gallery" class="nav-link"><span class="ku">گالەری</span><span class="en">Gallery</span></a>
+        <a href="#contact" class="nav-link"><span class="ku">پەیوەندی</span><span class="en">Contact</span></a>
+    </div>
+</nav>
+
 
     <!-- ABOUT -->
     <section id="about">
@@ -3099,6 +3215,21 @@ function toggleAccordion(button) {
         const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1});
         document.querySelectorAll('.reveal,.stagger').forEach(el=>obs.observe(el));
         document.querySelectorAll('a[href^="#"]').forEach(a=>{a.onclick=e=>{e.preventDefault();document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'})}});
+// Mobile nav toggle
+function toggleMobileNav() {
+    var nav = document.querySelector('.main-nav');
+    var btn = document.querySelector('.nav-hamburger');
+    nav.classList.toggle('nav-open');
+    btn.classList.toggle('active');
+}
+
+// Close mobile nav when a link is clicked
+document.querySelectorAll('.nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+        document.querySelector('.main-nav').classList.remove('nav-open');
+        document.querySelector('.nav-hamburger').classList.remove('active');
+    });
+});
     </script>
 </body>
 </html>
