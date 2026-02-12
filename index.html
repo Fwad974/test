@@ -61,20 +61,36 @@
         body.english span.en, body.english a.en { display: inline; }
         body.english span.ku, body.english a.ku { display: none; }
 
-        /* Lang Toggle */
-        .lang-toggle {
-            position: fixed;
-            top: 24px;
-            left: 24px;
-            z-index: 1000;
-            display: flex;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(20px);
-            padding: 5px;
-            border-radius: 100px;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
-            border: 1px solid rgba(255,255,255,0.8);
-        }
+        /* Lang Toggle *//* Remove the old .lang-toggle styles and replace with: */
+.lang-toggle-nav {
+    display: flex;
+    background: var(--pearl);
+    padding: 4px;
+    border-radius: 100px;
+    margin-right: auto; /* pushes it to the left in RTL */
+    flex-shrink: 0;
+}
+
+.lang-btn {
+    padding: 8px 18px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 100px;
+    transition: all 0.3s;
+    color: var(--slate-500);
+}
+
+body.english .lang-btn { font-family: 'Inter', sans-serif; }
+
+.lang-btn.active {
+    background: var(--midnight);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(15,23,42,0.3);
+}
 
         .lang-btn {
             padding: 10px 22px;
@@ -423,24 +439,33 @@
         }
 
         .nav-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            padding: 8px 20px;
-            flex-wrap: wrap;
-        }
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 20px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.nav-inner::-webkit-scrollbar {
+    display: none;
+}
 
         .nav-link {
-            color: var(--slate-600);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            padding: 12px 18px;
-            border-radius: 10px;
-            transition: all 0.3s;
-        }
+    color: var(--slate-600);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 12px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
 
         .nav-link:hover {
             color: var(--midnight);
@@ -1769,11 +1794,6 @@
     </style>
 </head>
 <body>
-    <div class="lang-toggle">
-        <button class="lang-btn active" onclick="setLang('ku')">کوردی</button>
-        <button class="lang-btn" onclick="setLang('en')">English</button>
-    </div>
-
     <!-- HERO -->
     <section class="hero">
         <div class="hero-bg">
@@ -1821,9 +1841,14 @@
     <!-- NAV -->
     <nav class="main-nav">
         <div class="nav-inner">
-                <a href="#" class="nav-logo">
+        <a href="#" class="nav-logo">
             <img src="images/logo00.jpg" alt="Soran University" style="height: 45px; width: auto; margin-left: 20px;">
         </a>
+        <!-- ADD THIS at the end, inside nav-inner -->
+        <div class="lang-toggle-nav">
+            <button class="lang-btn active" onclick="setLang('ku')">کوردی</button>
+            <button class="lang-btn" onclick="setLang('en')">English</button>
+        </div>
             <a href="#about" class="nav-link"><span class="ku">دەربارە</span><span class="en">About</span></a>
             <a href="#objectives" class="nav-link"><span class="ku">ئامانجەکان</span><span class="en">Objectives</span></a>
             <a href="#topics" class="nav-link"><span class="ku">بابەتەکان</span><span class="en">Topics</span></a>
@@ -2959,7 +2984,7 @@ function toggleAccordion(button) {
             </div>
             <div class="dl-row">
                 <div class="dl-row-right"><div class="dl-num">٣</div><div class="dl-name"><span class="ku">سەرچاوەی سێیەم</span><span class="en">Document 3</span></div></div>
-                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/uc?export=download&id=1A1fb-_X3H3FpuEqRgsQbvEMRhk8mizq4" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
+                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/file/d/1A1fb-_X3H3FpuEqRgsQbvEMRhk8mizq4/view?usp=sharing" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
             </div>
             <div class="dl-row">
                 <div class="dl-row-right"><div class="dl-num">٤</div><div class="dl-name"><span class="ku">سەرچاوەی چوارەم</span><span class="en">Document 4</span></div></div>
@@ -2967,11 +2992,11 @@ function toggleAccordion(button) {
             </div>
             <div class="dl-row">
                 <div class="dl-row-right"><div class="dl-num">٥</div><div class="dl-name"><span class="ku">سەرچاوەی پێنجەم</span><span class="en">Document 5</span></div></div>
-                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/file/d/19VQLQhhzObR9pVfoIGTJX-0fOuQC6VyJ/view?usp=sharing" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
+                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/uc?export=download&id=19VQLQhhzObR9pVfoIGTJX-0fOuQC6VyJ" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
             </div>
             <div class="dl-row">
                 <div class="dl-row-right"><div class="dl-num">٦</div><div class="dl-name"><span class="ku">سەرچاوەی شەشەم</span><span class="en">Document 6</span></div></div>
-                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/file/d/19F_Qc1m8x54rH4AX-CgPnB7DEgkY7NzJ/view?usp=sharing" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
+                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/uc?export=download&id=19F_Qc1m8x54rH4AX-CgPnB7DEgkY7NzJ" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
             </div>
             <div class="dl-row">
                 <div class="dl-row-right"><div class="dl-num">٧</div><div class="dl-name"><span class="ku">سەرچاوەی حەوتەم</span><span class="en">Document 7</span></div></div>
@@ -2979,15 +3004,15 @@ function toggleAccordion(button) {
             </div>
             <div class="dl-row">
                 <div class="dl-row-right"><div class="dl-num">٨</div><div class="dl-name"><span class="ku">سەرچاوەی هەشتەم</span><span class="en">Document 8</span></div></div>
-                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/file/d/19Vmal4ke_Z3N1ML4X_Z3E66BIMWOJQIq/view?usp=sharing" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
+                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/uc?export=download&id=16eAEO6AjVhr1WfNb-f5hRte_RanYrDzr" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
             </div>
             <div class="dl-row">
                 <div class="dl-row-right"><div class="dl-num">٩</div><div class="dl-name"><span class="ku">سەرچاوەی نۆیەم</span><span class="en">Document 9</span></div></div>
-                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/file/d/19_wv21aNGk6k8PhqJCayh3vNDc7imF2T/view?usp=sharing" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
+                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/uc?export=download&id=19_wv21aNGk6k8PhqJCayh3vNDc7imF2T" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
             </div>
             <div class="dl-row">
                 <div class="dl-row-right"><div class="dl-num">١٠</div><div class="dl-name"><span class="ku">سەرچاوەی دەیەم</span><span class="en">Document 10</span></div></div>
-                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/file/d/19_wv21aNGk6k8PhqJCayh3vNDc7imF2T/view?usp=sharing" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
+                <div class="dl-row-left"><span class="dl-type">PDF</span><a href="https://drive.google.com/uc?export=download&id=12efmKIAdHADdCZ9JRZMKRGZ1Lc09W_B4" target="_blank" class="dl-btn"><i class="fas fa-download"></i> <span class="ku">داگرتن</span><span class="en">Download</span></a></div>
             </div>
         </div>
     </div>
